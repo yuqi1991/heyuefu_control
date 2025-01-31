@@ -19,16 +19,12 @@ _LOGGER = logging.getLogger(__name__)
 TARGET_IP = "192.168.31.161"
 TARGET_PORT = 11315
 
-
-
-SwitchIDMap = {
-    "living_room_chandelier": "00090A01010101",
-    "living_room_spot_light": "00090701010102",
-}
+CONF_DEVICE_ID = "EMPTY"
 
 PLATFORM_SCHEMA = PLATFORM_SCHEMA.extend(
     {
         vol.Required(CONF_NAME): cv.string,
+        vol.Required(CONF_DEVICE_ID): cv.string,
     }
 )
 
@@ -73,10 +69,10 @@ class LightSwitch(SwitchEntity):
         OPEN = "open"
         CLOSE = "close"
 
-    def __init__(self, name,):
+    def __init__(self, name, device_id):
         """初始化开关."""
         self._name = name
-        self._device_id = SwitchIDMap[name]
+        self._device_id = device_id
         self._usr_data_sn = "1738310883024"
         self._phone_num = "13652388"
         self._destination_id = "0A010101"
@@ -155,7 +151,6 @@ class LightSwitch(SwitchEntity):
 async def async_setup_platform(hass, config, async_add_entities, discovery_info=None):
     """设置开关平台."""
     name = config.get(CONF_NAME)
-
-    dev = LightSwitch(name)
+    device_id = config.get(CONF_DEVICE_ID)
+    dev = LightSwitch(name, device_id)
     async_add_entities([dev])
-    
