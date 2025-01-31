@@ -19,10 +19,6 @@ _LOGGER = logging.getLogger(__name__)
 TARGET_IP = "192.168.31.161"
 TARGET_PORT = 11315
 
-CONF_USR_DATA_SN = "usr_data_sn"
-CONF_PHONE_NUM = "phone_num"
-CONF_DESTINATION_ID = "destination_id"
-CONF_SOURCE_ID = "source_id"
 
 
 SwitchIDMap = {
@@ -33,10 +29,6 @@ SwitchIDMap = {
 PLATFORM_SCHEMA = PLATFORM_SCHEMA.extend(
     {
         vol.Required(CONF_NAME): cv.string,
-        vol.Required(CONF_USR_DATA_SN): cv.string,
-        vol.Required(CONF_PHONE_NUM): cv.string,
-        vol.Required(CONF_DESTINATION_ID): cv.string,
-        vol.Required(CONF_SOURCE_ID): cv.string,
     }
 )
 
