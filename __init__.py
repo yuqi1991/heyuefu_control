@@ -1,0 +1,1 @@
+"""The my_light_switch component.""" 
