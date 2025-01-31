@@ -2,6 +2,7 @@ switch:
   - platform: yuexiu
     name: "living_room_chandelier"
     device_id: "00090A01010101"
+    
   - platform: yuexiu
     name: "living_room_spot_light"
     device_id: "00090701010102"
