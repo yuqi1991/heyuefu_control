@@ -19,7 +19,7 @@ _LOGGER = logging.getLogger(__name__)
 TARGET_IP = "192.168.31.161"
 TARGET_PORT = 11315
 
-CONF_DEVICE_ID = "EMPTY"
+CONF_DEVICE_ID = "device_id"
 
 PLATFORM_SCHEMA = PLATFORM_SCHEMA.extend(
     {
