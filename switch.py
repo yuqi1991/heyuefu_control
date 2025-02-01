@@ -85,6 +85,11 @@ class LightSwitch(SwitchEntity):
         return self._name
 
     @property
+    def unique_id(self):
+        """返回开关的唯一 ID."""
+        return self._device_id
+    
+    @property
     def is_on(self):
         """如果开关打开，则返回 True."""
         return self._state
